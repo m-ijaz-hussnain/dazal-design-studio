@@ -1,0 +1,29 @@
+[class^="section"] {
+  padding: 80px;
+  position: relative;
+  background-color: var(--n8);
+}
+
+.section-gray {
+  background-color: var(--n7);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 64px;
+  }
+
+  .section-hero {
+    padding: 64px;
+  }
+}
+
+@media (max-width: 430px) {
+  .section {
+    padding: 48px 32px;
+  }
+
+  .section-hero {
+    padding: 64px 32px;
+  }
+}
