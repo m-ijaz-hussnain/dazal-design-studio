@@ -1,0 +1,32 @@
+/* Main Layout Container */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  width: 100%;
+}
+
+/* Page Content Area (Desktop) */
+.content {
+  flex: 1;
+  margin-left: 260px; /* Sidebar ki jagah */
+  padding: 40px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Layout (Mobile & Tablet <= 900px) */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column; /* Mobile par sidebar upar aur content niche aayega */
+  }
+
+  .content {
+    margin-left: 0 !important; /* Mobile par sidebar ka side margin khatam */
+    width: 100% !important; /* Content poori width lega */
+    padding: 20px 16px; /* Balanced mobile padding */
+    min-height: auto;
+  }
+}
