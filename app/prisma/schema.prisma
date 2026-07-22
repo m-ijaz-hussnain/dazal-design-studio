@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id           Int               @id @default(autoincrement())
+  title        String            @unique
+  description  String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  introduction String
+  benefits     ProjectBenefit[]
+  features     ProjectFeature[]
+  images       ProjectImage[]
+  problems     ProjectProblem[]
+  solutions    ProjectSolution[]
+  steps        ProjectStep[]
+}
+
+model ProjectImage {
+
+  id        Int     @id @default(autoincrement())
+  url       String
+  type      String?
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectFeature {
+  id        Int     @id @default(autoincrement())
+  title     String
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectProblem {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+  projectId   Int
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectSolution {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+  projectId   Int
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectBenefit {
+  id        Int     @id @default(autoincrement())
+  title     String
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectStep {
+  id        Int     @id @default(autoincrement())
+  title     String
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+model About {
+
+  id               Int      @id @default(autoincrement())
+
+  heroTitle        String
+
+  heroDescription  String
+
+  sectionTitle     String
+
+  sectionSubtitle  String
+
+  imageOne         String?
+
+  imageTwo         String?
+
+  imageThree       String?
+
+  createdAt        DateTime @default(now())
+
+  updatedAt        DateTime @updatedAt
+}
+
+model ProcessSection {
+
+  id          Int      @id @default(autoincrement())
+
+  title       String?
+
+  description String?
+
+  createdAt   DateTime @default(now())
+
+  updatedAt   DateTime @updatedAt
+
+  steps       ProcessStep[]
+}
+
+model ProcessStep {
+
+  id          Int      @id @default(autoincrement())
+
+  title       String
+
+  description String
+
+  image       String?
+
+  processId   Int
+
+  process     ProcessSection @relation(fields: [processId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  updatedAt   DateTime @updatedAt
+}
