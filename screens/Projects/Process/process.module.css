@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title_container {
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: center;
+}
+
+.text,
+.subtitle {
+  color: var(--n4);
+}
+
+.title {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.process_container {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+}
+
+@media (max-width: 430px) {
+  .process_container {
+    grid-template-columns: 1fr;
+  }
+}

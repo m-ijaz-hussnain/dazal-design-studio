@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--n6);
+  padding-bottom: 32px;
+}
+
+.container:not(:first-child) {
+  padding-top: 32px;
+}
+
+.avatar {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.image_container {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  color: var(--n2);
+}
+
+.text,
+.subtitle {
+  color: var(--n4);
+}
+
+.subtitle {
+  text-align: left;
+  max-width: 600px;
+}
+
+@media (max-width: 430px) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

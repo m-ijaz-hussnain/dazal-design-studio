@@ -1,0 +1,50 @@
+.container {
+  padding: 24px;
+  background-color: var(--n1);
+  border-radius: 24px;
+  height: auto;
+  cursor: pointer;
+  position: relative;
+}
+
+.container:hover .title {
+  color: var(--green);
+}
+
+.container:hover svg {
+  stroke: var(--green);
+}
+
+.arrow_up {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.container:hover .arrow_up {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon_container svg,
+.arrow_up svg {
+  stroke: var(--n8);
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.title_container {
+  margin-top: 40px;
+}
+
+.title {
+  color: var(--n8);
+  margin-bottom: 8px;
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.text {
+  color: var(--n4);
+}

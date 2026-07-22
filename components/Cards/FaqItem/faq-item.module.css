@@ -1,0 +1,41 @@
+.container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--n6);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.title svg {
+  stroke: var(--n4);
+  flex-shrink: 0;
+}
+
+.active .title svg {
+  stroke: var(--n2);
+}
+
+.text {
+  display: none;
+  color: var(--n4);
+  margin-top: 24px;
+}
+
+.active .text {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-bottom: 32px;
+  }
+}

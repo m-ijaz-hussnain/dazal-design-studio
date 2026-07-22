@@ -1,0 +1,16 @@
+.container {
+  padding-bottom: 32px;
+}
+
+.container:not(:last-child) {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: #afc441;
+}
+
+.number {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+}

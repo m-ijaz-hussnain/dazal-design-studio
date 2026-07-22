@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--n6);
+  padding-bottom: 48px;
+}
+
+.title {
+  margin-bottom: 4px;
+  color: var(--n2);
+}
+
+.text,
+.years {
+  color: var(--n4);
+}
+
+@media (max-width: 430px) {
+  .container {
+    padding-bottom: 32px;
+  }
+}

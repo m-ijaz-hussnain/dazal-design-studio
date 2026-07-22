@@ -1,0 +1,49 @@
+.circular_container {
+  position: relative;
+  cursor: pointer;
+}
+
+.vector {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.text {
+  font-weight: 400;
+  letter-spacing: 1.7px;
+  font-size: 17px;
+  font-variant-ligatures: none;
+  letter-spacing: 6px;
+  transform-origin: 250px 250px;
+  fill: var(--n2);
+}
+
+.rotated_text {
+  width: 180px;
+  height: 180px;
+  animation-name: rotate-circle;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 1024px) {
+  .rotated_text {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 430px) {
+  .circular_container {
+    display: none;
+  }
+}

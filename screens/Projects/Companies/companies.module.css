@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  display: flex;
+  align-items: center;
+  background: var(--green);
+  padding: 64px;
+  gap: 64px;
+  border-radius: 24px;
+}
+
+.text,
+.subtitle {
+  color: var(--n4);
+}
+
+.title {
+  margin-top: 24px;
+}
+
+.number {
+  margin-bottom: 16px;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.companies {
+  margin-top: 48px;
+  display: flex;
+  gap: 64px;
+  align-items: center;
+}
+
+.company {
+  display: inline-block;
+}
+
+.company svg {
+  fill: var(--n1);
+}
+
+@media (max-width: 1024px) {
+  .background {
+    padding: 48px;
+    flex-direction: column;
+  }
+
+  .companies {
+    gap: 48px;
+  }
+
+  .company svg {
+    width: 90px;
+  }
+}
+
+@media (max-width: 430px) {
+  .background {
+    padding: 48px 32px;
+  }
+}
