@@ -180,7 +180,9 @@ export default function ProjectForm({ projectId = null }) {
           ? "Project updated successfully."
           : "Project created successfully."
       );
-      window.location.href = "/admin/projects";
+      
+      router.refresh();
+      router.replace("/admin/projects");
 
       setTitle("");
       setDescription("");
