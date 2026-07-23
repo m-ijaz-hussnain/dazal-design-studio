@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 export async function GET(request, { params }) {
   try {
@@ -225,6 +226,10 @@ export async function PUT(request, { params }) {
         },
 
       });
+      
+      revalidatePath("/");
+      revalidatePath("/projects");
+      revalidatePath("/admin/projects");
 
     return NextResponse.json({
 
@@ -274,6 +279,10 @@ export async function DELETE(request, { params }) {
       },
 
     });
+    
+    revalidatePath("/");
+    revalidatePath("/projects");  
+    revalidatePath("/admin/projects");
 
     return NextResponse.json({
 

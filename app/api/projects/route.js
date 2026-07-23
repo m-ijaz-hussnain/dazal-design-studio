@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-
 import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 export async function GET() {
   try {
@@ -130,7 +130,10 @@ export async function POST(request) {
 
       },
     });
-
+    
+    revalidatePath("/");
+    revalidatePath("/projects");
+    revalidatePath("/admin/projects");
 
     return NextResponse.json({
 
