@@ -1,0 +1,37 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: var(--green);
+  flex-shrink: 0;
+}
+
+.button svg {
+  stroke: var(--n2);
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.button:hover svg {
+  stroke: var(--n8);
+}
+
+.placeholder {
+  margin-top: 8px;
+  color: var(--n4);
+}
+
+@media (max-width: 430px) {
+  .placeholder {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

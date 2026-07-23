@@ -1,0 +1,47 @@
+.container {
+  width: 444px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputs {
+  display: flex;
+  gap: 16px;
+}
+
+.input,
+.textarea {
+  background-color: var(--n7);
+  width: 100%;
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  padding: 16px;
+  border: none;
+}
+
+.input {
+  height: 56px;
+}
+
+.textarea {
+  height: 120px;
+}
+
+.input::placeholder {
+  color: var(--n4);
+}
+
+.input:hover,
+.input:focus,
+.textarea:hover,
+.textarea:focus {
+  box-shadow: 0 0 0 2px var(--n2);
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: 100%;
+  }
+}

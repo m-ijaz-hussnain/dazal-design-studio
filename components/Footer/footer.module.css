@@ -1,0 +1,153 @@
+.section {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  border-radius: 24px;
+  position: relative;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.container,
+.content {
+  display: flex;
+}
+
+.block {
+  flex-grow: 1;
+  padding: 48px 64px;
+}
+
+.newsletter {
+  flex-grow: 1;
+  padding: 48px 64px 48px 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.link {
+  color: var(--n4);
+}
+
+.title {
+  color: var(--n8);
+  margin-bottom: 48px;
+}
+
+.title svg {
+  display: none;
+}
+
+.subscribe {
+  margin-top: 48px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px;
+  background-color: var(--n1);
+}
+
+.copyright {
+  color: var(--n4);
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+}
+
+.socials svg {
+  stroke: var(--n8);
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  cursor: pointer;
+}
+
+.socials svg:hover {
+  stroke: var(--green);
+}
+
+@media (max-width: 1024px) {
+  .container,
+  .content {
+    flex-direction: column;
+  }
+
+  .block,
+  .newsletter {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: var(--n2);
+  }
+
+  .block:nth-child(1) {
+    padding-top: 48px;
+  }
+
+  .block {
+    padding: 0 32px;
+  }
+
+  .newsletter {
+    padding: 0 32px 32px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    margin-bottom: 0;
+    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .title svg {
+    display: inline-block;
+    flex-shrink: 0;
+    stroke: var(--n8);
+    margin-left: 24px;
+  }
+
+  .active .title {
+    color: var(--green);
+  }
+
+  .active .title svg {
+    stroke: var(--green);
+  }
+
+  .links {
+    display: none;
+    padding: 0 0 24px;
+  }
+
+  .active .links {
+    display: flex;
+  }
+
+  .subscribe {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .section {
+    margin-bottom: 96px;
+  }
+
+  .section_margin {
+    margin-bottom: 32px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+  }
+}
