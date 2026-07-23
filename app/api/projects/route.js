@@ -2,6 +2,28 @@ import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 
+export async function GET() {
+  try {
+    const projects = await prisma.project.findMany({
+      include: {
+        images: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return NextResponse.json(projects);
+  } catch (error) {
+    console.error(error);
+
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(request) {
 
   try {
