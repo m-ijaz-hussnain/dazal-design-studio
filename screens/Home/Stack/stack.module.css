@@ -1,0 +1,29 @@
+.text {
+  color: var(--n4);
+}
+
+.title {
+  margin-top: 24px;
+}
+
+.tools {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .tools {
+    margin-top: 48px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+
+  .title {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+}

@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text,
+.subtitle {
+  color: var(--n4);
+}
+
+.title {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.articles {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .articles {
+    margin-top: 48px;
+  }
+
+  .title {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+}
